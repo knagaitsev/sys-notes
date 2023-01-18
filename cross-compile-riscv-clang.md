@@ -9,13 +9,13 @@ First you need a `riscv-gnu-toolchain`
 unset LD_LIBRARY_PATH
 
 # set install location (keep this set for later steps)
-export GCC_TOOLCHAIN_PATH=$HOME/riscv
+export RISCV_GCC_TOOLCHAIN_PATH=$HOME/riscv
 
 git clone --recursive https://github.com/riscv/riscv-gnu-toolchain
 
 cd riscv-gnu-toolchain
 
-./configure --prefix="${GCC_TOOLCHAIN_PATH}"
+./configure --prefix="${RISCV_GCC_TOOLCHAIN_PATH}"
 # make newlib -j $(nproc)
 make linux -j $(nproc)
 ```
@@ -30,7 +30,7 @@ Setting the following options is required:
 :warning: Important: the `--sysroot` and `--gcc-toolchain` options for clang will not accept `~` as part of the path, use `$HOME` instead, or use an environment variable for the location of the gcc toolchain to make things easier (like the one set earlier)
 
 ```bash
-clang++ main.cpp --target=riscv64-unknown-linux-gnu -mcmodel=medany -march=rv64g -mabi=lp64d --sysroot=$GCC_TOOLCHAIN_PATH/sysroot --gcc-toolchain=$GCC_TOOLCHAIN_PATH -static
+clang++ main.cpp --target=riscv64-unknown-linux-gnu -mcmodel=medany -march=rv64g -mabi=lp64d --sysroot=$RISCV_GCC_TOOLCHAIN_PATH/sysroot --gcc-toolchain=$RISCV_GCC_TOOLCHAIN_PATH -static
 ```
 
 You can test it quickly with:
