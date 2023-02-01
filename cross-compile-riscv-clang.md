@@ -1,5 +1,11 @@
 ## Cross-compile with clang to RISC-V
 
+You may need to install this dependency beforehand:
+
+```
+sudo apt install texinfo
+```
+
 Below are the steps for cross-compiling to riscv, and including C/C++ standard libraries
 
 First you need a `riscv-gnu-toolchain` 
