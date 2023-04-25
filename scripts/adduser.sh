@@ -14,6 +14,8 @@ fi
 # Generate random password
 password=$(openssl rand -base64 15 | tr -d "=+/")
 
+echo "Generated password: $password"
+
 # Create user with password
 sudo useradd -m -p $(openssl passwd -1 $password) $username
 
