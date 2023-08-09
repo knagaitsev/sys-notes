@@ -38,6 +38,19 @@ If you build QEMU from source, make sure to configure it to include network:
 
 If you need a kernel module in the VM, build it on the host machine using the same Linux source that you used to build the kernel. Then transfer the `.ko` file into the VM.
 
+## SSH
+
+An entry like this in `~/.ssh/config` will make life easier:
+
+```
+Host vm
+    HostName localhost
+    IdentityFile /path/to/bullseye.id_rsa
+    User root
+    Port 10021
+    StrictHostKeyChecking no
+```
+
 ## Bare Metal
 
 When it comes time to test on bare metal, the first thing to do is to install Ubuntu on the machine, and then get the kernel version you were developing with using mainline: https://sleeplessbeastie.eu/2021/11/01/how-to-install-mainline-linux-kernel-on-ubuntu-based-distribution/
