@@ -2,6 +2,14 @@
 
 This guide for QEMU setup of Linux kernel with Ubuntu host is very useful: https://github.com/google/syzkaller/blob/master/docs/linux/setup_ubuntu-host_qemu-vm_x86-64-kernel.md
 
+Make sure to increase memory and SMP cores
+
+To start off with a sufficiently large `.img` file use this. Keep in mind this is a virtual size of the `ext4` filesystem, the `.img` file will actually grow as the space is used. This will give `200 GB` of space.
+
+```
+./create-image.sh -s 204800
+```
+
 ## Resize .img
 
 If you need to resize the `.img` file, do so using `resize2fs`: https://linux.die.net/man/8/resize2fs
@@ -16,6 +24,14 @@ To increase the virtual size after shrinking, without increasing the actual `.im
 
 ```
 resize2fs file.img 100G
+```
+
+## Building QEMU
+
+If you build QEMU from source, make sure to configure it to include network:
+
+```
+./configure --enable-slirp
 ```
 
 ## Kernel Modules
