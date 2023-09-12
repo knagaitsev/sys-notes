@@ -19,7 +19,7 @@ setenv fdt_addr 0x80800000
 ext2load mmc 0:3 ${fdt_addr} /boot/<dtb file>
 fdt addr ${fdt_addr}
 
-tftp {loadaddr} <img filename>
+tftp ${loadaddr} <img filename>
 
 bootm ${loadaddr} - ${fdt_addr}
 ```
