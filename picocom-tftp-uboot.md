@@ -38,7 +38,7 @@ setenv ipaddr <machine ip>
 setenv serverip <server ip>
 
 setenv loadaddr 0x80300000
-setenv fdt_addr 0x80800000
+setenv fdt_addr 0x88000000
 
 tftpboot ${loadaddr} ${serverip}:sifive.img
 
