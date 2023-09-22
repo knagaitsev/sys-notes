@@ -71,3 +71,5 @@ If you want to boot original Linux from the microSD just run these commands inst
 run load_distro_uenv
 run distro_bootcmd
 ```
+
+(You could also just run `boot` for the 2nd command)
