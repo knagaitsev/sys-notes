@@ -60,3 +60,8 @@ setenv origbootcmd "$bootcmd"
 setenv bootcmd "run distro_bootcmd"
 saveenv
 ```
+
+To print env info you can do:
+```
+printenv
+```
