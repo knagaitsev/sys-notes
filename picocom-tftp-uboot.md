@@ -65,3 +65,9 @@ To print env info you can do:
 ```
 printenv
 ```
+
+If you want to boot original Linux from the microSD just run these commands instead from U-Boot:
+```
+run load_distro_uenv
+run distro_bootcmd
+```
