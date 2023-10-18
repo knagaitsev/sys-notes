@@ -65,3 +65,4 @@ then
     sudo usermod -aG sudo $username
 fi
 
+sudo chsh -s /bin/bash $username
