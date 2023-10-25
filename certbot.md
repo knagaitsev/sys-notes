@@ -29,5 +29,5 @@ sudo certbot certonly \
   --dns-cloudflare \
   --dns-cloudflare-credentials ~/cloudflare.ini \
   --dns-cloudflare-propagation-seconds 60 \
-  -d example1.com -d example2.com
+  -d example.com -d *.example.com
 ```
