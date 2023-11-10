@@ -66,3 +66,5 @@ then
 fi
 
 sudo chsh -s /bin/bash $username
+
+echo "\`$username@$HOSTNAME.cs.northwestern.edu\`, password: \`$password\`"
