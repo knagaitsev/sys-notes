@@ -31,3 +31,38 @@ sudo certbot certonly \
   --dns-cloudflare-propagation-seconds 60 \
   -d example.com -d *.example.com
 ```
+
+--------
+
+You may need to make a root cron job to put the cert where you want it:
+
+```
+cd ~
+mkdir cert
+cd cert
+touch copy.sh
+chmod +x copy.sh
+nvim copy.sh
+```
+
+Then insert something like the following:
+
+```
+sudo cp /etc/letsencrypt/live/domain/fullchain.pem /home/username/cert
+sudo cp /etc/letsencrypt/live/domain/privkey.pem /home/username/cert
+sudo chmod 644 /home/username/cert/privkey.pem
+sudo chmod 644 /home/username/cert/fullchain.pem
+```
+
+Then you need to do:
+```
+sudo crontab -e
+```
+
+To move the cert every hour, put the following cron job in:
+
+```
+0 * * * * /home/username/cert/copy.sh
+```
+
+As a test, you can first set the `0` to a `*` to see it run the script every minute.
