@@ -1,6 +1,6 @@
 Increase size of existing swap file:
 
-```
+```bash
 sudo swapoff /swap.img
 
 # 64G, using 1G blocks
