@@ -9,6 +9,8 @@ Then if you want to select item 2 of submenu 1 (both 0-indexed), set:
 GRUB_DEFAULT="1>2"
 ```
 
+(The default here is `GRUB_DEFAULT=0` if you need to revert back)
+
 Also, if you want to make sure the grub menu displays, set:
 
 ```
