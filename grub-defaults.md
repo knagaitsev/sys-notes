@@ -20,7 +20,6 @@ Typically submenu 1 gets you into `Advanced options for Ubuntu`, then the 2nd or
 - 3: Recovery Mode Default kernel 2 (e.g. `5.15.0-94-generic`)
 - 4: Custom kernel (e.g. `5.15.0+`)
 - 5: Recovery Mode Custom kernel (e.g. `5.15.0+`)
-
 ```
 
 Also, if you want to make sure the grub menu displays, set:
