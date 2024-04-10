@@ -66,3 +66,8 @@ To move the cert every hour, put the following cron job in:
 ```
 
 As a test, you can first set the `0` to a `*` to see it run the script every minute.
+
+*Important:*
+
+You need to make sure the app using the cert restarts periodically as well, otherwise it will be stuck using the old cert!
+
