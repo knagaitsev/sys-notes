@@ -1,12 +1,14 @@
 Start by cloning: `https://github.com/NixOS/nixpkgs`
 
-Then in the root we can run the following:
+Then in the root you can run the following:
 
 ```bash
 nix-shell -I "nixpkgs=$(pwd)" -A linux_5_15 --pure
 ```
 
-Alternatively we can start the REPL and then do the following:
+After that you can follow this guide: https://github.com/NixOS/nixpkgs/tree/master/pkgs/os-specific/linux/kernel
+
+You can also start the REPL and then do the following:
 
 ```
 nix repl -I "nixpkgs=$(pwd)"
