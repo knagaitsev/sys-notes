@@ -1,4 +1,4 @@
-Start by cloning: `https://github.com/NixOS/nixpkgs`
+Start by cloning: https://github.com/NixOS/nixpkgs
 
 Then in the root you can run the following:
 
