@@ -41,8 +41,11 @@ clang++ main.cpp --target=riscv64-unknown-linux-gnu -mcmodel=medany -march=rv64g
 
 You can test it quickly with:
 ```bash
+sudo apt install qemu-user
 qemu-riscv64 a.out
 ```
+
+Note that `qemu-user` will override how executables are run so that `./a.out` will also work, despite it being a RISC-V binary
 
 Example C++ file for reference:
 ```c++
