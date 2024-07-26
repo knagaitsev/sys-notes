@@ -45,7 +45,7 @@ sudo apt install qemu-user
 qemu-riscv64 a.out
 ```
 
-Note that `qemu-user` will override how executables are run so that `./a.out` will also work on a non-riscv machine, despite it being a RISC-V binary
+Note that `qemu-user` will override how executables are run so that `./a.out` will also work on a non-riscv machine, despite it being a RISC-V binary. Be sure to run `file a.out` to confirm it is a RISC-V ELF
 
 Example C++ file for reference:
 ```c++
