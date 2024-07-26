@@ -1,9 +1,9 @@
 ## Cross-compile with clang to RISC-V
 
-You may need to install this dependency beforehand:
+Install `riscv-gnu-toolchain` dependencies (listed on their github)
 
 ```
-sudo apt install texinfo
+sudo apt-get install autoconf automake autotools-dev curl python3 python3-pip libmpc-dev libmpfr-dev libgmp-dev gawk build-essential bison flex texinfo gperf libtool patchutils bc zlib1g-dev libexpat-dev ninja-build git cmake libglib2.0-dev libslirp-dev
 ```
 
 Below are the steps for cross-compiling to riscv, and including C/C++ standard libraries
