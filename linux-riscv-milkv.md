@@ -26,7 +26,7 @@ scp -r linux-riscv pecorino:/home/kir/linux-riscv
 
 Then on the RISC-V machine do:
 
-```
+```bash
 cd linux-riscv
 sudo make modules_install -j64
 sudo make install
