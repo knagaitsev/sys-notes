@@ -24,10 +24,18 @@ cd ..
 scp -r linux-riscv pecorino:/home/kir/linux-riscv
 ```
 
-Or compiling with clang:
+Or compiling with clang LTO:
+
+(Note that the vendor Linux repository will not work with Clang LTO since LTO was introduced for RISC-V in Linux 6.9)
 
 ```bash
 git clone git@github.com:milkv-pioneer/linux-riscv.git --depth 1 linux-riscv
+```
+
+See: https://www.phoronix.com/news/RISC-V-With-Clang-LTO-Linux-6.9
+
+```bash
+git clone git@github.com:knagaitsev/linux.git --branch linux_6.10 --depth 1 linux_6.10
 
 cd linux-riscv
 
