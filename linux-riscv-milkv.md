@@ -24,6 +24,37 @@ cd ..
 scp -r linux-riscv pecorino:/home/kir/linux-riscv
 ```
 
+Or compiling with clang:
+
+```bash
+git clone git@github.com:milkv-pioneer/linux-riscv.git --depth 1 linux-riscv
+
+cd linux-riscv
+
+cp path/to/config-6.1.31 .config
+
+scripts/config --disable SECURITY_LOCKDOWN_LSM
+scripts/config --disable MODULE_SIG
+scripts/config --disable MODULE_SIG_FORMAT
+scripts/config --disable MODULE_SIG_ALL
+scripts/config --disable SYSTEM_TRUSTED_KEYS
+scripts/config --disable SYSTEM_REVOCATION_KEYS
+scripts/config --disable CONFIG_DEBUG_INFO_BTF
+
+scripts/config -e LTO_CLANG
+scripts/config -e LTO_CLANG_FULL
+scripts/config -d LTO_CLANG_NONE
+scripts/config -d LTO_NONE
+
+ARCH=riscv CROSS_COMPILE=riscv64-unknown-linux-gnu- LLVM=1 make olddefconfig
+
+ARCH=riscv CROSS_COMPILE=riscv64-unknown-linux-gnu- LLVM=1 make -j48
+
+cd ..
+
+scp -r linux-riscv pecorino:/home/kir/linux-riscv
+```
+
 Then on the RISC-V machine do:
 
 ```bash
