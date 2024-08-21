@@ -46,6 +46,9 @@ scripts/config -e LTO_CLANG_FULL
 scripts/config -d LTO_CLANG_NONE
 scripts/config -d LTO_NONE
 
+scripts/config --disable VECTOR
+scripts/config --disable DRM_SMI
+
 ARCH=riscv CROSS_COMPILE=riscv64-unknown-linux-gnu- LLVM=1 make olddefconfig
 
 ARCH=riscv CROSS_COMPILE=riscv64-unknown-linux-gnu- LLVM=1 make -j48
