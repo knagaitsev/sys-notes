@@ -35,7 +35,7 @@ git clone git@github.com:milkv-pioneer/linux-riscv.git --depth 1 linux-riscv
 See: https://www.phoronix.com/news/RISC-V-With-Clang-LTO-Linux-6.9
 
 ```bash
-git clone git@github.com:knagaitsev/linux.git --branch linux_6.10 --depth 1 linux-riscv
+git clone git@github.com:knagaitsev/linux.git --branch sg2042-lto --depth 1 linux-riscv
 
 cd linux-riscv
 
