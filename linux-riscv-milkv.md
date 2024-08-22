@@ -73,5 +73,5 @@ Then on the RISC-V machine do:
 ```bash
 cd linux-riscv
 sudo make modules_install -j64
-sudo make install
+sudo make install -j64
 ```
