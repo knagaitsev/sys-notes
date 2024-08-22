@@ -57,6 +57,8 @@ scripts/config -d LTO_NONE
 scripts/config --disable VECTOR
 scripts/config --disable DRM_SMI
 
+scripts/config --disable DYNAMIC_FTRACE
+
 ARCH=riscv CROSS_COMPILE=riscv64-unknown-linux-gnu- LLVM=1 make olddefconfig
 
 ARCH=riscv CROSS_COMPILE=riscv64-unknown-linux-gnu- LLVM=1 make -j48
