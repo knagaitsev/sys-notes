@@ -72,9 +72,17 @@ ARCH=riscv CROSS_COMPILE=riscv64-unknown-linux-gnu- LLVM=1 make olddefconfig
 
 ARCH=riscv CROSS_COMPILE=riscv64-unknown-linux-gnu- LLVM=1 make -j48
 
+#if it is a static build just move Image and System.map
+scp arch/riscv/boot/Image pecorino:/home/kir/linux-riscv/static-image
+scp System.map pecorino:/home/kir/linux-riscv/static-image
+
+# otherwise do the following:
 cd ..
 
 scp -r linux-riscv pecorino:/home/kir/linux-riscv
+
+# alternatively use rsync:
+rsync -avz --delete --progress linux-riscv pecorino:/home/kir/linux-riscv
 ```
 
 Then on the RISC-V machine do:
@@ -85,8 +93,8 @@ sudo make modules_install -j64
 sudo make install -j64
 ```
 
-Or when built statically you can simply do something like:
+Or when built statically you can simply do this:
 
 ```
-/sbin/installkernel 6.1.22+ arch/riscv/boot/Image System.map /boot
+/sbin/installkernel 6.1.22+ /home/kir/linux-riscv/static-image/Image /home/kir/linux-riscv/static-image/System.map /boot
 ```
