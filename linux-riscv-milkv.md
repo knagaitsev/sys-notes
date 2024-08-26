@@ -58,9 +58,12 @@ scripts/config -d LTO_CLANG_NONE
 scripts/config -d LTO_NONE
 
 scripts/config --disable VECTOR
-scripts/config --disable DRM_SMI
+# scripts/config --disable DRM_SMI
 
 scripts/config --disable DYNAMIC_FTRACE
+
+scripts/config -e CMDLINE_FORCE
+scripts/config -s CMDLINE "console=ttyS0,115200 root=/dev/nvme0n1p3 rootfstype=ext4 rootwait rw earlycon selinux=0 LANG=en_US.UTF-8"
 
 ARCH=riscv CROSS_COMPILE=riscv64-unknown-linux-gnu- LLVM=1 make olddefconfig
 
