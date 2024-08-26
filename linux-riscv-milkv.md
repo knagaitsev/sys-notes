@@ -63,7 +63,7 @@ scripts/config --disable VECTOR
 scripts/config --disable DYNAMIC_FTRACE
 
 scripts/config -e CMDLINE_FORCE
-scripts/config -s CMDLINE "console=ttyS0,115200 root=/dev/nvme0n1p3 rootfstype=ext4 rootwait rw earlycon selinux=0 LANG=en_US.UTF-8"
+scripts/config --set-str CMDLINE "console=ttyS0,115200 root=/dev/nvme0n1p3 rootfstype=ext4 rootwait rw earlycon selinux=0 LANG=en_US.UTF-8"
 
 ARCH=riscv CROSS_COMPILE=riscv64-unknown-linux-gnu- LLVM=1 make olddefconfig
 
