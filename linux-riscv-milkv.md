@@ -75,6 +75,7 @@ ARCH=riscv CROSS_COMPILE=riscv64-unknown-linux-gnu- LLVM=1 make -j48
 #if it is a static build just move Image and System.map
 scp arch/riscv/boot/Image pecorino:/home/kir/linux-riscv/static-image
 scp System.map pecorino:/home/kir/linux-riscv/static-image
+ssh pecorino "/sbin/installkernel 6.1.22+ /home/kir/linux-riscv/static-image/Image /home/kir/linux-riscv/static-image/System.map /boot"
 
 # otherwise do the following:
 cd ..
