@@ -77,8 +77,7 @@ ARCH=riscv CROSS_COMPILE=riscv64-unknown-linux-gnu- LLVM=1 make -j48
 
 scp arch/riscv/boot/Image pecorino:/home/kir/linux-riscv/static-image
 scp System.map pecorino:/home/kir/linux-riscv/static-image
-ssh pecorino "sudo rm -f vmlinuz-6.1.22+.old System.map-6.1.22+.old vmlinuz-6.1.22+ System.map-6.1.22+ initramfs-6.1.22+.img"
-ssh pecorino "sudo mkdir -p /lib/modules/6.1.22+ && /sbin/installkernel 6.1.22+ /home/kir/linux-riscv/static-image/Image /home/kir/linux-riscv/static-image/System.map /boot"
+ssh -t pecorino "sudo rm -f vmlinuz-6.1.22+.old System.map-6.1.22+.old vmlinuz-6.1.22+ System.map-6.1.22+ initramfs-6.1.22+.img && sudo mkdir -p /lib/modules/6.1.22+ && sudo /sbin/installkernel 6.1.22+ /home/kir/linux-riscv/static-image/Image /home/kir/linux-riscv/static-image/System.map /boot"
 
 # otherwise do the following:
 cd ..
