@@ -15,6 +15,9 @@ scripts/config --disable SYSTEM_TRUSTED_KEYS
 scripts/config --disable SYSTEM_REVOCATION_KEYS
 scripts/config --disable CONFIG_DEBUG_INFO_BTF
 
+scripts/config --disable RISCV_ISA_V
+scripts/config --enable CMDLINE_FORCE
+
 ARCH=riscv CROSS_COMPILE=riscv64-unknown-linux-gnu- make olddefconfig
 
 ARCH=riscv CROSS_COMPILE=riscv64-unknown-linux-gnu- make -j48
