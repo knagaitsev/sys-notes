@@ -59,6 +59,7 @@ scripts/config -d LTO_NONE
 
 scripts/config --disable VECTOR
 scripts/config --disable DRM_SMI
+scripts/config --disable DRM_NOUVEAU
 
 scripts/config --disable DYNAMIC_FTRACE
 
