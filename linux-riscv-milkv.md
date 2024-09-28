@@ -69,6 +69,9 @@ scripts/config --set-str CMDLINE "console=ttyS0,115200 root=/dev/nvme0n1p3 rootf
 scripts/config --disable MODULES
 scripts/config --disable KUNIT
 
+# there is trouble getting past a portion of the boot process with interrupts off for strict kernel mem protection
+scripts/config --disable STRICT_KERNEL_RWX
+
 ARCH=riscv CROSS_COMPILE=riscv64-unknown-linux-gnu- LLVM=1 make olddefconfig
 
 ARCH=riscv CROSS_COMPILE=riscv64-unknown-linux-gnu- LLVM=1 make -j48
