@@ -9,11 +9,11 @@ watch -n 1 'sudo perf stat -e tlb:tlb_flush -a -- sleep 1'
 
 We are interested in capturing TLB shootdown events such as this one: https://github.com/knagaitsev/linux/blob/linux_5.15/arch/x86/mm/tlb.c#L877
 
-Turn on tracing for TLB flushes:
+Turn on tracing for TLB flushes (tee the value 1 into the target files as sudo):
 
 ```bash
-sudo echo 1 > /sys/kernel/debug/tracing/events/tlb/tlb_flush/enable
-sudo echo 1 > /sys/kernel/debug/tracing/tracing_on
+echo 1 | sudo tee /sys/kernel/debug/tracing/events/tlb/tlb_flush/enable > /dev/null
+echo 1 | sudo tee /sys/kernel/debug/tracing/tracing_on > /dev/null
 ```
 
 Look at the trace:
