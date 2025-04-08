@@ -19,5 +19,12 @@ echo 1 | sudo tee /sys/kernel/debug/tracing/tracing_on > /dev/null
 Look at the trace:
 
 ```bash
-sudo cat /sys/kernel/debug/tracing/trace
+sudo cat /sys/kernel/debug/tracing/trace > tlb.trace
+```
+
+Turn off TLB flush tracing and clear the latest trace
+
+```bash
+echo 0 | sudo tee /sys/kernel/debug/tracing/events/tlb/tlb_flush/enable > /dev/null
+echo | sudo tee /sys/kernel/debug/tracing/trace > /dev/null
 ```
