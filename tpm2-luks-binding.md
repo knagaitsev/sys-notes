@@ -22,3 +22,10 @@ sudo cryptsetup luksDump /dev/nvme0n1p3
 
 sudo update-initramfs -u -k all
 ```
+
+To view and change clevis config:
+
+```
+sudo clevis luks list -d /dev/nvme0n1p3
+sudo clevis luks unbind -d /dev/nvme0n1p3 -s <entry-number>
+```
