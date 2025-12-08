@@ -9,15 +9,24 @@ sudo vim /etc/nftables.conf
 ```
 
 ```
+#!/usr/sbin/nft -f
+
+flush ruleset
+
 table inet filter {
-    chain output {
-        type filter hook output priority 0; policy accept;
-        meta skuid 1001 drop # replace with user UID
-    }
-    chain input {
-        type filter hook input priority 0; policy accept;
-        meta skuid 1001 drop # optional: prevents inbound too
-    }
+	chain input {
+		type filter hook input priority filter;
+		iif "lo" accept
+		meta skuid 1001 drop
+	}
+	chain forward {
+		type filter hook forward priority filter;
+	}
+	chain output {
+		type filter hook output priority filter;
+		oif "lo" accept
+		meta skuid 1001 drop
+	}
 }
 ```
 
