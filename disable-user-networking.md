@@ -8,6 +8,8 @@ id $USERNAME
 sudo vim /etc/nftables.conf
 ```
 
+Anything on localhost is accepted, everything else is rejected:
+
 ```
 #!/usr/sbin/nft -f
 
