@@ -1,3 +1,5 @@
+## MILK-V notes
+
 On the build machine do
 
 ```bash
@@ -105,3 +107,9 @@ Or when built statically you can simply do this:
 ```
 /sbin/installkernel 6.1.22+ /home/kir/linux-riscv/static-image/Image /home/kir/linux-riscv/static-image/System.map /boot
 ```
+
+## VM Notes
+
+Take a look here: https://github.com/google/syzkaller/blob/master/docs/linux/setup_linux-host_qemu-vm_riscv64-kernel.md
+
+The VM can work successfully with buildroot version: 2024.05
