@@ -57,3 +57,11 @@ int main(int argc, char** argv) {
     return 0;
 }
 ```
+
+## BEANDIP-specific Notes
+
+Cross-compilation for the VisionFive2 board required a particular glibc version, which could be obtained like so:
+
+```
+git clone --recursive https://github.com/riscv/riscv-gnu-toolchain --branch 2023.01.03
+```
