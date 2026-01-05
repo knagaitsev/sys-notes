@@ -35,7 +35,7 @@ kir@limburger:/tank$
 
 **To test this:**
 
-- transfer a larger set of files (like Linux) from local disk to zfs via rsync
+- transfer a larger set of files (like the Linux kernel source tree) from local disk to zfs via rsync
 - use `ncdu .` to check virtual size and size on disk, for both the local disk and zfs. See size on disk has increased for zfs due to larger block sizes
-- use rsync to transfer it back again to the original disk, and see that the size on disk shrinks again
+- use rsync to transfer it back from zfs to the original disk, and see that the size on disk shrinks back down on local disk
 - virtual sizes should match throughout
