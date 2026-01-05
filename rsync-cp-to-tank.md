@@ -32,3 +32,10 @@ Blocks: Total: 67172181   Free: 67172181   Available: 67172181
 Inodes: Total: 137568624823 Free: 137568624721
 kir@limburger:/tank$
 ```
+
+**To test this:**
+
+- transfer a larger set of files (like Linux) from local disk to zfs via rsync
+- use `ncdu .` to check virtual size and size on disk, for both the local disk and zfs. See size on disk has increased for zfs due to larger block sizes
+- use rsync to transfer it back again to the original disk, and see that the size on disk shrinks again
+- virtual sizes should match throughout
