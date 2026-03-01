@@ -29,3 +29,12 @@ To view and change clevis config:
 sudo clevis luks list -d /dev/nvme0n1p3
 sudo clevis luks unbind -d /dev/nvme0n1p3 -s <entry-number>
 ```
+
+### Updates
+
+If there is an update to kernel versions in the boot partition, when the crypt is not currently unlocked:
+
+```bash
+sudo cryptsetup luksOpen /dev/nvme0n1p3 crypt
+sudo update-grub
+```
