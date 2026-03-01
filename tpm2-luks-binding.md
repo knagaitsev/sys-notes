@@ -38,3 +38,19 @@ If there is an update to kernel versions in the boot partition, when the crypt i
 sudo cryptsetup luksOpen /dev/nvme0n1p3 crypt
 sudo update-grub
 ```
+
+If something changes in the firmware or boot setup, do the following to tie to the new PCR values:
+
+**Note: in this example `nvme0n1p3` has been moved to `nvme1n1p3` (different SSD slot)
+
+```
+sudo clevis luks list -d /dev/nvme1n1p3
+sudo clevis luks unbind -d /dev/nvme1n1p3 -s <entry-number>
+
+# Rebind with the new PCR values
+sudo clevis luks bind -d /dev/nvme1n1p3 tpm2 '{"pcr_bank":"sha256","pcr_ids":"0,1,7"}'
+
+# Rebuild initramfs
+sudo update-initramfs -u -k all
+```
+
