@@ -14,4 +14,5 @@ Then:
 - Plug into the desktop and start up BIOS by pressing Del.
 - Run the Q-Flash utility to flash new BIOS
 - Ignore BitLocker warning (BitLocker is a built-in Windows security feature that encrypts your entire drive)
-- Note the Checksum from the BIOS page, it will show at end of installation
+- Note the Checksum from the BIOS page, it will show during installation
+- There will be a quick reboot, followed by "Updating BIOS Now" progress bar (takes couple minutes)
