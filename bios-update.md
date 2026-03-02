@@ -13,4 +13,5 @@ Then:
 - Place the file `B850GAMINGWF6.Fxx` on the USB stick.
 - Plug into the desktop and start up BIOS by pressing Del.
 - Run the Q-Flash utility to flash new BIOS
+- Ignore BitLocker warning (BitLocker is a built-in Windows security feature that encrypts your entire drive)
 - Note the Checksum from the BIOS page, it will show at end of installation
