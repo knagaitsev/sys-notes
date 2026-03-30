@@ -2,9 +2,8 @@
 
 ## Planning
 
-- Always check `claude-plans/` directory for current architecture plans (if it exists)
+- Always check `agent-plans/` directory for current architecture plans (if it exists)
 - If making a complex plan, create a new plan file, and include the date in the plan filename to make it clear which plans were the most recent
-- when creating a complex plan, switch to using model `Opus 4.6`, and before starting the implementation of the complex plan, go back to using model `Sonnet 4.6`
 
 ## Code style preferences
 
