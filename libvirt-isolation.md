@@ -1,3 +1,47 @@
+## libvirt Setup
+
+```bash
+sudo apt update
+sudo apt install qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils virtinst
+```
+
+```
+sudo systemctl enable --now libvirtd
+sudo usermod -aG libvirt $(whoami)
+
+# start new session, then check:
+
+virsh list --all
+```
+
+Edit `/etc/default/libvirt-guests`
+
+```
+# Action on host shutdown: shutdown or suspend
+ON_SHUTDOWN=shutdown
+
+# How long to wait for guests to shut down (seconds)
+SHUTDOWN_TIMEOUT=300
+
+# Action on host boot for previously running guests
+ON_BOOT=start   # or 'ignore'
+```
+
+```bash
+systemctl enable libvirt-guests
+systemctl start libvirt-guests
+```
+
+Then check:
+
+```bash
+systemctl status libvirt-guests
+
+# See which VMs are set to autostart (these are managed on boot)
+virsh list --autostart
+```
+
+
 VM gets internet, but can't poke at your LAN devices:
 
 ```xml
