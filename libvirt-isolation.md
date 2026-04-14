@@ -45,3 +45,5 @@ Attach it to the VM by editing its XML (virsh edit), find the `<interface>` bloc
 ```xml
 <filterref filter='no-lan-access'/>
 ```
+
+Finally, shut the VM down, then start it again.
