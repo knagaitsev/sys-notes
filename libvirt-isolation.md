@@ -41,6 +41,7 @@ systemctl status libvirt-guests
 virsh list --autostart
 ```
 
+## Network Isolation
 
 VM gets internet, but can't poke at your LAN devices:
 
