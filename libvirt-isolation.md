@@ -28,8 +28,8 @@ ON_BOOT=start   # or 'ignore'
 ```
 
 ```bash
-systemctl enable libvirt-guests
-systemctl start libvirt-guests
+sudo systemctl enable libvirt-guests
+sudo systemctl start libvirt-guests
 ```
 
 Then check:
