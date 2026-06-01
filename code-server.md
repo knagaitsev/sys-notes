@@ -27,5 +27,10 @@ Fix issues with PET:
 cd ~/.local/share/code-server/extensions/ms-python.python-2026.4.0-universal
 mkdir -p python-env-tools/bin
 cd python-env-tools/bin
+
+# on macOS
 cp ~/.vscode/extensions/ms-python.python-2026.4.0-darwin-arm64/python-env-tools/bin/pet .
+
+# on remote Linux
+cp ~/.vscode-server/extensions/ms-python.python-2026.4.0-linux-x64/python-env-tools/bin/pet .
 ```
