@@ -12,6 +12,7 @@ Install extension:
 
 ```bash
 code-server --install-extension meta.pyrefly
+code-server --install-extension ms-python.python ms-python.vscode-python-envs ms-python.debugpy
 ```
 
 Uninstall extension:
