@@ -14,6 +14,35 @@ sudo usermod -aG libvirt $(whoami)
 virsh list --all
 ```
 
+## Create VM
+
+```bash
+sudo cp disk.qcow2 /var/lib/libvirt/images/agent-vm1.qcow2
+sudo chown libvirt-qemu:kvm /var/lib/libvirt/images/agent-vm1.qcow2
+
+virt-install --name agent-vm1 --memory 118784 --vcpus sockets=1,cores=16,threads=1 --cpu host-passthrough --os-variant ubuntu24.04 --disk path=/var/lib/libvirt/images/agent-vm1.qcow2,bus=virtio,discard=unmap --import --network network=default,model=virtio --graphics none --console pty,target_type=serial --memballoon none --rng /dev/urandom
+
+# view or edit the XML
+virsh edit agent-vm1
+
+virsh start agent-vm1
+
+# check the hostname of the new VM
+virsh domifaddr agent-vm1
+```
+
+Set up SSH config:
+
+```
+Host agent-vm1-kiwi-libvirt
+  Hostname 192.168.122.62
+  User kir
+  ProxyJump kiwi
+  LocalForward 24241 localhost:24241
+```
+
+## Auto-start and auto-shutdown
+
 Edit `/etc/default/libvirt-guests`
 
 ```
