@@ -29,6 +29,12 @@ virsh start agent-vm1
 
 # check the hostname of the new VM
 virsh domifaddr agent-vm1
+
+# open shell (`Ctrl + ]` to exit)
+virsh console agent-vm1
+
+# shut down
+virsh shutdown agent-vm1
 ```
 
 Set up SSH config:
