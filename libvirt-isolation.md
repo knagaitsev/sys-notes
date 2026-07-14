@@ -27,9 +27,6 @@ virsh edit agent-vm1
 
 virsh start agent-vm1
 
-# check the hostname of the new VM
-virsh domifaddr agent-vm1
-
 # open shell (`Ctrl + ]` to exit)
 virsh console agent-vm1
 
@@ -37,7 +34,43 @@ virsh console agent-vm1
 virsh shutdown agent-vm1
 ```
 
-Set up SSH config:
+## Network Setup
+
+Check the IP of the new VM:
+
+```bash
+virsh domifaddr agent-vm1
+```
+
+### DHCP Issue Fix
+
+In case an IP is not showing up, it may be due to DHCP not running on the Ubuntu VM. Follow instructions below to fix this.
+
+(More about this issue can be found in the following conversation: https://claude.ai/chat/88b4fd6b-48e4-4305-b819-e6d04cf62ab0)
+
+```bash
+sudo ip link set enp1s0 up
+
+sudo nano /etc/netplan/01-netcfg.yaml
+```
+
+```yaml
+network:
+  version: 2
+  renderer: networkd
+  ethernets:
+    enp1s0:
+      dhcp4: true
+```
+
+```bash
+sudo chmod 600 /etc/netplan/01-netcfg.yaml
+sudo netplan apply
+```
+
+### SSH Config
+
+Once you can obtain the VM IP, set up SSH config:
 
 ```
 Host agent-vm1-kiwi-libvirt
