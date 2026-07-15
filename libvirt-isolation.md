@@ -111,7 +111,7 @@ virsh list --autostart
 
 ## Network Isolation
 
-VM gets internet, but can't poke at your LAN devices:
+VM gets internet, but can't poke at your LAN devices with the following XML config. Write this to a file `no-lan-access.xml` at any location.
 
 ```xml
 <filter name='no-lan-access' chain='ipv4'>
