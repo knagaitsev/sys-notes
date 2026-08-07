@@ -13,3 +13,11 @@ apt policy linux-tools-$(uname -r)
 Latest versions can also be checked here, according to Ubuntu version:
 
 https://launchpad.net/ubuntu/+source/linux-meta
+
+## Disable Unattended Upgrades
+
+```bash
+sudo dpkg-reconfigure -plow unattended-upgrades
+```
+
+Answer "No" when asked
