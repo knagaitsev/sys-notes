@@ -54,3 +54,9 @@ sudo clevis luks bind -d /dev/nvme1n1p3 tpm2 '{"pcr_bank":"sha256","pcr_ids":"0,
 sudo update-initramfs -u -k all
 ```
 
+### Update from Unencrypted OS
+
+```bash
+sudo cryptsetup luksOpen /dev/nvme0n1p3 crypt
+sudo update-grub
+```
