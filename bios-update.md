@@ -23,3 +23,4 @@ Then:
 - Secure Boot enabled (Secure Boot Mode: standard)
 - XMP profile (XMP 1)
 - CSM Support: Disabled
+- Smart Fan -> Normal Fan speed control
