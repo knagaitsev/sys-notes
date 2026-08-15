@@ -52,6 +52,7 @@ sudo clevis luks bind -d /dev/nvme1n1p3 tpm2 '{"pcr_bank":"sha256","pcr_ids":"0,
 
 # Rebuild initramfs
 sudo update-initramfs -u -k all
+sudo update-grub
 ```
 
 ### Update from Unencrypted OS
