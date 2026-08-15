@@ -18,7 +18,7 @@ Then:
 - IMPORTANT: the reboot happens automatically, so you just have a moment to verify the checksum
 - There will be a quick reboot, followed by "Updating BIOS Now" progress bar (takes couple minutes)
 
-Note the following BIOS settings that we want after a re-flash:
+### Note the following BIOS settings that we want after a re-flash:
 
 - Secure Boot enabled (Secure Boot Mode: standard)
 - XMP profile (XMP 1)
