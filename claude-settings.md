@@ -50,7 +50,7 @@ Test if things are working:
 claude -p "say hi"
 ```
 
-**If Claude still prompts you to log in, the fix is to add this to:** `~/.claude.json`
+**If Claude still prompts you to log in, the fix is to add this to** `~/.claude.json`:
 
 ```
 "hasCompletedOnboarding": true
