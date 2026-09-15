@@ -23,3 +23,35 @@ To switch to default mode of auto:
   }
 }
 ```
+
+## Prevent Regular Re-Authentication
+
+If you are already logged in, start with doing this in Claude:
+
+```
+/logout
+```
+
+Run:
+
+```bash
+claude setup-token
+```
+
+Save to `~/.bashrc`:
+
+```
+export CLAUDE_CODE_OAUTH_TOKEN=...
+```
+
+Test if things are working:
+
+```
+claude -p "say hi"
+```
+
+**If Claude still prompts you to log in, the fix is to add this to:** `~/.claude.json`
+
+```
+"hasCompletedOnboarding": true
+```
