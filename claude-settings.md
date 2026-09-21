@@ -14,12 +14,17 @@ For `--dangerously-skip-permissions` by default (along with other useful setting
 }
 ```
 
-To switch to default mode of auto:
+For auto mode by default:
 
 ```json
 {
+  "cleanupPeriodDays": 3650,
   "permissions": {
     "defaultMode": "auto"
+  },
+  "model": "opus[1m]",
+  "worktree": {
+    "bgIsolation": "none"
   }
 }
 ```
