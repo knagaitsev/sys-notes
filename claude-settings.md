@@ -10,6 +10,11 @@ For `--dangerously-skip-permissions` by default (along with other useful setting
   "worktree": {
     "bgIsolation": "none"
   },
+  "attribution": {
+    "commit": "",
+    "pr": "",
+    "sessionUrl": false
+  },
   "skipDangerousModePermissionPrompt": true
 }
 ```
@@ -25,6 +30,11 @@ For auto mode by default:
   "model": "opus[1m]",
   "worktree": {
     "bgIsolation": "none"
+  },
+  "attribution": {
+    "commit": "",
+    "pr": "",
+    "sessionUrl": false
   }
 }
 ```
