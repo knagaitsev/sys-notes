@@ -160,3 +160,11 @@ Attach it to the VM by editing its XML (virsh edit), find the `<interface>` bloc
 ```
 
 Finally, shut the VM down, then start it again.
+
+## Swap Out VM Image
+
+```bash
+sudo mv /var/lib/libvirt/images/agent-vm1.qcow2 /var/lib/libvirt/images/agent-vm1-old-name.qcow2
+sudo cp ~/dev/vm/disk-backups/libvirt-agent-vm1-essential-tools-1.qcow2 /var/lib/libvirt/images/agent-vm1.qcow2
+sudo chown libvirt-qemu:kvm /var/lib/libvirt/images/agent-vm1.qcow2
+```
